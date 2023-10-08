@@ -1,6 +1,17 @@
+def prime_number(bilangan):
+    if bilangan == 1:
+        return False
+    elif bilangan > 1:
+        for i in range(2, bilangan):
+            if (bilangan % i) == 0:
+                return False
+        else:
+            return True
+    else:
+        return False
+
 def full_prima(N):
-    # your code here
-    return ''
+    return prime_number(N) and all(prime_number(int(digit)) for digit in str(N))
 
 if __name__ == '__main__':
     print(full_prima(2)) # True
